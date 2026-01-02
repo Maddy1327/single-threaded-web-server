@@ -1,5 +1,3 @@
-package SingleThreadedProject;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -14,8 +12,7 @@ public class Client {
     public void run() throws UnknownHostException, IOException {
         int port = 8010; // Specify the port number to connect to
         InetAddress address = InetAddress.getByName("localhost"); // Get the localhost address
-        Socket socket = new Socket(address, port); // Create a socket to connect to the server at the specified address
-                                                   // and port
+        Socket socket = new Socket(address, port); // Create a socket to connect to the server at the specified address and port
         PrintWriter toSocket = new PrintWriter(socket.getOutputStream(), true); // Create a PrintWriter to send data to
                                                                                 // the server
         BufferedReader fromSocket = new BufferedReader(new InputStreamReader(socket.getInputStream())); // Create a
